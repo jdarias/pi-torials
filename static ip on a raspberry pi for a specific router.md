@@ -73,3 +73,5 @@ static ip_address=10.1.1.31/24
 static routers=10.1.1.1
 static domain_name_servers=10.1.1.1
 ```
+
+This way we configure the wireless interface to give a static ip of 10.1.1.31/24 when it connects to a router in 10.1.1.1 that has the MAC aa:bb:cc:dd:ee:ff. For anything else it falls back to dhcp
