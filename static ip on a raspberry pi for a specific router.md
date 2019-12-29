@@ -24,6 +24,8 @@ Find the address of your router (or gateway)
 
 `ip route | grep default | awk '{print $3}'`
 
+It gives out this
+
 `10.1.1.1`
 
 Finally note down the address of your DNS server, which is often the same as your gateway.
@@ -40,8 +42,11 @@ nameserver 10.1.1.1`
 [Source](https://www.raspberrypi.org/forums/viewtopic.php?t=140252)
 
 We use wlan0 for the wireless interface and eth0 for the etherenet interface. In my case i'm setting the wireless interface, so in /etc/dhcpcd.conf i'm going to create a new line at the end with 
+
 `interface wlan0`
+
 Then i'm using arping to specify the address of the router:
+
 `arping 10.1.1.1`
 
 Profiles can be defined with IP or the MAC of the router. Since 10.1.1.1 could be used in other networks' routers, i'm going to find the MAC of the router
@@ -55,12 +60,11 @@ static routers=10.1.1.1
 static domain_name_servers=10.1.1.1`
 
 Should look like this: 
+
 `interface wlan0
 arping 10.1.1.1
 
-profile aa:bb:cc:dd:ee:ff`
+profile aa:bb:cc:dd:ee:ff
 static ip_address=10.1.1.31/24
 static routers=10.1.1.1
-static domain_name_servers=10.1.1.1
-`
-
+static domain_name_servers=10.1.1.1`
