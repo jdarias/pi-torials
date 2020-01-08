@@ -1,0 +1,17 @@
+# message of the day
+[Here's a nice motd for the pi](https://github.com/gagle/raspberrypi-motd)
+
+1. Clone the repo with 
+
+`git clone https://github.com/gagle/raspberrypi-motd.git`
+
+1. Type
+
+`cd raspberrypi-motd`
+
+1. run
+
+```
+sudo chown root:root motd.sh
+sudo chmod +x motd.sh
+```
